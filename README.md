@@ -2,6 +2,26 @@
 
 ### This is a python port for a [browser QRCode generator](https://github.com/kozakdenys/qr-code-styling) by [Denys Kozak](https://github.com/kozakdenys)
 
+[![PyPI version](https://badge.fury.io/py/qrcode-styled.svg)](https://pypi.org/project/qrcode-styled/)
+
+## Install
+
+Using **Poetry**
+
+```shell
+poetry add qrcode-styled
+```
+
+Using **PIP**
+
+```shell
+pip install qrcode-styled
+```
+
+![Example 1](./test.webp)
+
+## Usage
+
 ```python
 from qrcode_styled import QRCodeStyled
 
@@ -31,5 +51,3 @@ from PIL import Image
 im = Image.open('image.png')
 qrcode = qr.get('payload', im, _format='WEBP')
 ```
-
-![Example 1](./test.webp)

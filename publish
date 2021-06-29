@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+#bash test || exit $?
+rm -rf dist
+rm -rf build
+poetry publish --build
