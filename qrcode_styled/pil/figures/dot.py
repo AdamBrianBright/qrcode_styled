@@ -19,7 +19,7 @@ class Dot(Figure):
         self.ctx.rectangle((x, y, x + size, y + size), fill=color, outline=None, width=0)
 
     def _basic_side_rounded(self, x, y, size, color, rotation):
-        self.ctx.pieslice((x, y, x + size, y + size), -90 + rotation, 90 + rotation, fill=color, outline=None, width=0)
+        self.ctx.pieslice((x, y, x + size, y + size), 270 + rotation, 90 + rotation, fill=color, outline=None, width=0)
         rotate = rotation % 360
         half = size / 2
         if rotate == 0:
@@ -32,17 +32,17 @@ class Dot(Figure):
             self.ctx.rectangle((x, y + half, x + size, y + size), fill=color, outline=None, width=0)
 
     def _basic_corner_rounded(self, x, y, size, color, rotation):
-        rotate = rotation % 360
+        rotate = ((rotation + 360) % 360)
         self.ctx.pieslice((x, y, x + size, y + size), rotation - 90, rotation, fill=color, outline=None, width=0)
         half = size / 2
-        if rotate != 0:
-            self.ctx.rectangle((x + half, y, x + size, y + half), fill=color, outline=None, width=0)  # TR
-        if rotate not in [90, -270]:
-            self.ctx.rectangle((x, y + half, x + half, y + size), fill=color, outline=None, width=0)  # BL
-        if rotate not in [180, -180]:
-            self.ctx.rectangle((x + half, y + half, x + size, y + size), fill=color, outline=None, width=0)  # BR
-        if rotate not in [270, -90]:
-            self.ctx.rectangle((x, y, x + half, y + half), fill=color, outline=None, width=0)  # TL
+        if rotate != 0:  # If top-right is not rounded, print square there
+            self.ctx.rectangle((x + half, y, x + size, y + half), fill=color, outline=None, width=0)
+        if rotate != 90:  # If bottom-right is not rounded, print square there
+            self.ctx.rectangle((x + half, y + half, x + size, y + size), fill=color, outline=None, width=0)
+        if rotate != 180:  # If bottom-left is not rounded, print square there
+            self.ctx.rectangle((x, y + half, x + half, y + size), fill=color, outline=None, width=0)
+        if rotate != 270:  # If top-left is not rounded, print square there
+            self.ctx.rectangle((x, y, x + half, y + half), fill=color, outline=None, width=0)
 
     def _basic_corner_extra_rounded(self, x, y, size, color, rotation):
         rotate = rotation % 360
@@ -72,7 +72,7 @@ class RoundedDot(Dot):
             elif top and right:
                 rotation = 180
             elif right and bottom:
-                rotation = -90
+                rotation = 270
             return self._basic_corner_rounded(x, y, size, color, rotation=rotation)
         elif n_count == 1:
             rotation = 0
@@ -81,7 +81,7 @@ class RoundedDot(Dot):
             elif right:
                 rotation = 180
             elif bottom:
-                rotation = -90
+                rotation = 270
             return self._basic_side_rounded(x, y, size, color, rotation=rotation)
         else:
             return self._basic_dot(x, y, size, color, rotation=0)
@@ -100,7 +100,7 @@ class ExtraRoundedDot(Dot):
             elif top and right:
                 rotation = 180
             elif right and bottom:
-                rotation = -90
+                rotation = 270
             return self._basic_corner_extra_rounded(x, y, size, color, rotation=rotation)
         elif n_count == 1:
             rotation = 0
@@ -109,7 +109,7 @@ class ExtraRoundedDot(Dot):
             elif right:
                 rotation = 180
             elif bottom:
-                rotation = -90
+                rotation = 270
             return self._basic_side_rounded(x, y, size, color, rotation=rotation)
         else:
             return self._basic_dot(x, y, size, color, rotation=0)

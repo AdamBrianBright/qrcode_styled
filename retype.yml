@@ -1,0 +1,47 @@
+input: wiki
+output: .retype
+cname: adambrianbright.github.io
+url: https://adambrianbright.github.io/qrcode_styled/
+branding:
+  title: QRStyled
+  label: python
+  logo: img/logo.svg
+  logoDark: img/logo.svg
+meta:
+  title: " | QRCode Styled Python"
+favicon: img/favicon.png
+edit:
+  repo: https://github.com/AdamBrianBright/qrcode_styled
+  branch: master
+  base: wiki
+  label: Edit on GitHub
+links:
+  - text: Home
+    link: https://adambrianbright.github.io/qrcode_styled/
+  - text: GitHub
+    link: https://github.com/AdamBrianBright/qrcode_styled
+  - text: Issues
+    link: https://github.com/AdamBrianBright/qrcode_styled/issues
+  - text: TODO
+    link: https://github.com/AdamBrianBright/qrcode_styled/projects/1
+footer:
+  copyright: "© Copyright {{ year }}. [Cifrazia, Inc.](https://cifrazia.com/) All rights reserved."
+  links:
+    - text: VK Group
+      link: https://vk.com/cifrazia
+snippets:
+  lineNumbers:
+    - bash
+    - command
+    - js
+    - json
+    - json5
+    - md
+    - py
+    - pyi
+    - sh
+    - toml
+    - ts
+    - txt
+    - yaml
+    - yml

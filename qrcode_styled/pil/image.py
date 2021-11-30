@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 from qrcode_styled.base.image import BaseStyledImage, CORNERS, DOT_MASK, SQUARE_MASK
 from .figures.corner import Corner, ExtraRoundedCornerSquare
-from .figures.dot import Dot, RoundedDot
+from .figures.dot import Dot, ExtraRoundedDot
 
 __all__ = [
     'PilStyledImage',
@@ -13,7 +13,7 @@ __all__ = [
 
 
 class PilStyledImage(BaseStyledImage):
-    DOT = RoundedDot
+    DOT = ExtraRoundedDot
     CORNER = ExtraRoundedCornerSquare
     CORNER_DOT = None  # ExtraRoundedCornerDot
 

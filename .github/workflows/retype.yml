@@ -1,0 +1,26 @@
+name: GitHub Action for Retype
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - uses: retypeapp/action-build@v1
+        with:
+          config: retype.yml
+
+      - uses: retypeapp/action-github-pages@v1
+        with:
+          branch: retype
+          update-branch: true
