@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adambrianbright.github.io/qrcode_styled/sitemap.xml.gz
