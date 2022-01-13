@@ -30,7 +30,7 @@ packages = [
 python = "^3.9"
 qrcode = "^6.1"
 lxml = { version = "^4.6.4", optional = true }
-Pillow = "^8.4.0"
+Pillow = ">=8.4,<10.0"
 
 [tool.poetry.extras]
 svg = ["lxml"]
