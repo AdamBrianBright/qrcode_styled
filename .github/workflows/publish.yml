@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       OS: ubuntu-latest
-      PYTHON: '3.10.0'
+      PYTHON: '3.10.9'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -21,12 +21,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@master
         with:
-          python-version: 3.10.0
+          python-version: 3.10.9
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install poetry wheel
-          poetry config experimental.new-installer false
 #      - name: Test with pytest + generate coverage
 #        shell: bash
 #        run: |

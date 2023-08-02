@@ -16,13 +16,13 @@ We do not intend to maintain this project for wide usage, but feel free to use i
 ## Features
 
 + Multiple formats:
-   + [x] SVG using `xmls`
-   + [x] PNG/WEBP, etc. using `Pillow`
+    + [x] SVG using `xmls`
+    + [x] PNG/WEBP, etc. using `Pillow`
 + Multiple styles:
-   + [x] Extra rounded corners
-   + [ ] Rounded corners
-   + [ ] Straight
-   + [ ] Dotted
+    + [x] Extra rounded corners
+    + [ ] Rounded corners
+    + [ ] Straight
+    + [ ] Dotted
 
 Check out [our documentation](https://adambrianbright.github.io/qrcode_styled/get-started/).
 
@@ -42,19 +42,19 @@ pip install qrcode-styled
 
 ### Requirements
 
-+ Python `>= 3.9`
-+ Pillow `>= 8.2.0`
++ Python `>= 3.10`
++ Pillow `>= 10.0`
 + qrcode `>= 6.1`
 + lxml `>= 8.2.0` (optional, for SVG rendering)
 
 ### Extras
 
 | Keyword | Description                | Packages        |
-| ------- | -------------------------- | --------------- |
+|---------|----------------------------|-----------------|
 | `svg`   | Allows you to generate SVG | `lxml >= 4.6.3` |
 
 | SVG                                | WEBp                                |
-| ---------------------------------- | ----------------------------------- |
+|------------------------------------|-------------------------------------|
 | ![Svg QRCode](./wiki/img/test.svg) | ![Svg QRCode](./wiki/img/test.webp) |
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FAdamBrianBright%2Fqrcode_styled.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FAdamBrianBright%2Fqrcode_styled?ref=badge_large)

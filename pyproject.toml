@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "qrcode_styled"
-version = "0.2.1"
+version = "0.2.2"
 description = "Python port for kozakdenys/qr-code-styling"
 authors = ["Bogdan Parfenov <adam.brian.bright@gmail.com>"]
 license = "MIT"
@@ -27,19 +27,17 @@ packages = [
 
 
 [tool.poetry.dependencies]
-python = "^3.9"
-qrcode = "^7.3.1"
-lxml = { version = "^4.7.1", optional = true }
-Pillow = "^9.0.0"
+python = "^3.10"
+qrcode = "^7.4.2"
+lxml = { version = "^4.9.3", optional = true }
+Pillow = "^10.0.0"
 
 [tool.poetry.extras]
 svg = ["lxml"]
 
-[tool.poetry.dev-dependencies]
-pytest = "^6.2.5"
-lxml-stubs = "^0.3.0"
-
-
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+lxml-stubs = "^0.4.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
